@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 import java.util.List;
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +18,7 @@ public class Pricelist {
     @Id
     private Integer id;
     @Column
-    private Integer price;
+    private BigDecimal price;
 
     @OneToMany
     private List<Service> serviceList;
@@ -36,14 +37,6 @@ public class Pricelist {
     public Pricelist() {
     }
 
-    public Pricelist(Integer id, Integer price, List<Service> serviceList, List<Doctor> doctorList, List<Room> roomList, List<Request> requestsList) {
-        this.id = id;
-        this.price = price;
-        this.serviceList = serviceList;
-        this.doctorList = doctorList;
-        this.roomList = roomList;
-        this.requestsList = requestsList;
-    }
 
     public Integer getId() {
         return id;
@@ -53,12 +46,20 @@ public class Pricelist {
         this.id = id;
     }
 
-    public Integer getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public List<ServiceToPatient> getServiceToPatientsList() {
+        return serviceToPatientsList;
+    }
+
+    public void setServiceToPatientsList(List<ServiceToPatient> serviceToPatientsList) {
+        this.serviceToPatientsList = serviceToPatientsList;
     }
 
     public List<Service> getServiceList() {
@@ -93,15 +94,4 @@ public class Pricelist {
         this.requestsList = requestsList;
     }
 
-    @Override
-    public String toString() {
-        return "Pricelist{" +
-                "id=" + id +
-                ", price=" + price +
-                ", serviceList=" + serviceList +
-                ", doctorList=" + doctorList +
-                ", roomList=" + roomList +
-                ", requestsList=" + requestsList +
-                '}';
-    }
 }

@@ -21,7 +21,7 @@ public class Request {
     @Column
     private String father;
     @Column
-    private Integer number;
+    private String number;
     @Column
     private String comment;
     @Column
@@ -30,15 +30,6 @@ public class Request {
     public Request() {
     }
 
-    public Request(Integer id, String name, String surname, String father, Integer number, String comment, Boolean state, List<Pricelist> pricelistsList) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.father = father;
-        this.number = number;
-        this.comment = comment;
-        this.state = state;
-    }
 
     public Integer getId() {
         return id;
@@ -72,11 +63,11 @@ public class Request {
         this.father = father;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -96,16 +87,4 @@ public class Request {
         this.state = state;
     }
 
-    @Override
-    public String toString() {
-        return "Request{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", father='" + father + '\'' +
-                ", number=" + number +
-                ", comment='" + comment + '\'' +
-                ", state=" + state  +
-                '}';
-    }
 }

@@ -48,5 +48,11 @@ public class Schedule {
         this.date = date;
     }
 
+    public Date getFromActualTime() {
+        return fromActualTime;
+    }
 
+    public void setFromActualTime(Date fromActualTime) {
+        this.fromActualTime = fromActualTime;
+    }
 }

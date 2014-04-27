@@ -29,6 +29,13 @@ public class ServiceToPatient {
     @OneToMany
     private List<Patient> patientList;
 
+    public Date getToTime() {
+        return toTime;
+    }
+
+    public void setToTime(Date toTime) {
+        this.toTime = toTime;
+    }
 
     public Date getFromTime() {
         return fromTime;

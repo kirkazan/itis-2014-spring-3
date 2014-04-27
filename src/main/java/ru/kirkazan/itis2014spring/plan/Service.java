@@ -1,6 +1,7 @@
 package ru.kirkazan.itis2014spring.plan;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -18,24 +19,18 @@ public class Service {
     @Column
     private String name;
     @Column
-    private Integer basePrice;
+    private BigDecimal basePrice;
     @Column
     @Temporal(TemporalType.DATE)
     private Date fromActualDate;
     @Column
     @Temporal(TemporalType.DATE)
     private Date toActualDate;
+    @ManyToOne
+    private Profile profile;
 
 
     public Service() {
-    }
-
-    public Service(Integer id, String name, Integer basePrice, Date fromActualDate, Date toActualDate, List<Patient> patientList) {
-        this.id = id;
-        this.name = name;
-        this.basePrice = basePrice;
-        this.fromActualDate = fromActualDate;
-        this.toActualDate = toActualDate;
     }
 
     public Integer getId() {
@@ -54,11 +49,11 @@ public class Service {
         this.name = name;
     }
 
-    public Integer getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Integer basePrice) {
+    public void setBasePrice(BigDecimal basePrice) {
         this.basePrice = basePrice;
     }
 
@@ -78,17 +73,11 @@ public class Service {
         this.toActualDate = toActualDate;
     }
 
+    public Profile getProfile() {
+        return profile;
+    }
 
-
-
-    @Override
-    public String toString() {
-        return "Service{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", basePrice=" + basePrice +
-                ", fromActualDate=" + fromActualDate +
-                ", toActualDate=" + toActualDate +
-                '}';
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 }

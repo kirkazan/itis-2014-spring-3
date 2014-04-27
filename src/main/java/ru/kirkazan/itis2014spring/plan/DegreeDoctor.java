@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +20,7 @@ public class DegreeDoctor {
     @Column
     private String name;
     @Column
-    private Integer koef;
+    private BigDecimal koef;
 
     public DegreeDoctor() {
     }
@@ -40,12 +41,11 @@ public class DegreeDoctor {
         this.name = name;
     }
 
-    public Integer getKoef() {
+    public BigDecimal getKoef() {
         return koef;
     }
 
-    public void setKoef(Integer koef) {
+    public void setKoef(BigDecimal koef) {
         this.koef = koef;
     }
-
 }

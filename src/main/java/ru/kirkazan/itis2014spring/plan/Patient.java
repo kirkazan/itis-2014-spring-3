@@ -61,40 +61,4 @@ public class Patient {
         this.father = father;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Patient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", father='" + father + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-
-        Patient patient = (Patient) object;
-
-        if (!father.equals(patient.father)) return false;
-        if (!id.equals(patient.id)) return false;
-        if (!name.equals(patient.name)) return false;
-        if (!surname.equals(patient.surname)) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + id.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + surname.hashCode();
-        result = 31 * result + father.hashCode();
-        return result;
-    }
-
 }

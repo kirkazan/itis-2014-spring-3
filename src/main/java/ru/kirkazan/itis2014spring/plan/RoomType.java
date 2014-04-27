@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.math.BigDecimal;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,17 +20,12 @@ public class RoomType {
     @Column
     private String name;
     @Column
-    private Integer koef;
+    private BigDecimal koef;
 
 
     public RoomType() {
     }
 
-    public RoomType(Integer id, String name, Integer koef) {
-        this.id = id;
-        this.name = name;
-        this.koef = koef;
-    }
 
     public Integer getId() {
         return id;
@@ -47,42 +43,11 @@ public class RoomType {
         this.name = name;
     }
 
-    public Integer getKoef() {
+    public BigDecimal getKoef() {
         return koef;
     }
 
-    public void setKoef(Integer koef) {
+    public void setKoef(BigDecimal koef) {
         this.koef = koef;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        RoomType roomType = (RoomType) o;
-
-        if (id != null ? !id.equals(roomType.id) : roomType.id != null) return false;
-        if (koef != null ? !koef.equals(roomType.koef) : roomType.koef != null) return false;
-        if (name != null ? !name.equals(roomType.name) : roomType.name != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (koef != null ? koef.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "RoomType{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", koef=" + koef +
-                '}';
     }
 }

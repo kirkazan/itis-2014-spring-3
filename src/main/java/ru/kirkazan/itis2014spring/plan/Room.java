@@ -30,12 +30,6 @@ public class Room {
     public Room() {
     }
 
-    public Room(Integer id, String name, Date fromActualDate, Date toActualDate) {
-        this.id = id;
-        this.name = name;
-        this.fromActualDate = fromActualDate;
-        this.toActualDate = toActualDate;
-    }
 
     public Integer getId() {
         return id;
@@ -69,14 +63,4 @@ public class Room {
         this.toActualDate = toActualDate;
     }
 
-
-    @Override
-    public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", fromActualDate=" + fromActualDate +
-                ", toActualDate=" + toActualDate +
-                '}';
-    }
 }
